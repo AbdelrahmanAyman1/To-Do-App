@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ic_list"
+        android:enabled="true"
+        android:icon="@drawable/ic_list"
+        android:title=""
+        app:showAsAction="always" />
+
+
+    <item
+        android:checkable="false"
+        android:checked="false"
+        android:enabled="false"
+        android:title=""
+        app:showAsAction="always" />
+
+
+    <item
+
+        android:id="@+id/icon_sittings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title=""
+        app:showAsAction="always" />
+</menu>
