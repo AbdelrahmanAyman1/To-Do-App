@@ -12,7 +12,6 @@ import com.example.todo.database.model.Todo
 class TodosAdapter(var items: List<Todo>? = null) :
     RecyclerView.Adapter<TodosAdapter.ViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_todo, parent, false)
@@ -28,6 +27,10 @@ class TodosAdapter(var items: List<Todo>? = null) :
     fun changeData(newItems: List<Todo>) {
         items = newItems
         notifyDataSetChanged()
+    }
+
+    fun deleteItem(itemPos: Int) {
+
     }
 
     override fun getItemCount(): Int = items?.size ?: 0

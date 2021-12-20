@@ -31,7 +31,6 @@ class TodoListFragment : Fragment() {
         placeHolder = view.findViewById(R.id.place_holder)
         initCalendarView()
         initRecyclerView()
-
     }
 
     fun initCalendarView() {
