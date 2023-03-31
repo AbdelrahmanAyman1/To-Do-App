@@ -16,7 +16,7 @@ import java.util.*
 
 class TodoListFragment : Fragment() {
     lateinit var calendar: MaterialCalendarView
-    lateinit var placeHolder: LinearLayout
+    lateinit var pleaseHolder: LinearLayout
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,9 +28,10 @@ class TodoListFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        placeHolder = view.findViewById(R.id.place_holder)
-        initCalendarView()
+        pleaseHolder = view.findViewById(R.id.please_holder)
         initRecyclerView()
+        initCalendarView()
+
     }
 
     fun initCalendarView() {
@@ -48,7 +49,7 @@ class TodoListFragment : Fragment() {
             cal.get(Calendar.DAY_OF_MONTH)
         )
         calendar.setOnDateChangedListener { widget, date, selected ->
-            reloadTodosList(
+            reloadTodoList(
                 date.day,
                 date.month - 1,
                 date.year
@@ -57,16 +58,16 @@ class TodoListFragment : Fragment() {
     }
 
     lateinit var date: Date
-    private fun reloadTodosList(day: Int, month: Int, year: Int) {
-        val cal = Calendar.getInstance()
-        cal.set(Calendar.DAY_OF_MONTH, day)
-        cal.set(Calendar.MONTH, month)
-        cal.set(Calendar.YEAR, year)
-        cal.clear(Calendar.HOUR)
-        cal.clear(Calendar.MINUTE)
-        cal.clear(Calendar.SECOND)
-        cal.clear(Calendar.MILLISECOND)
-        date = cal.time
+    private fun reloadTodoList(day: Int, month: Int, year: Int) {
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.DAY_OF_MONTH, day)
+        calendar.set(Calendar.MONTH, month)
+        calendar.set(Calendar.YEAR, year)
+        calendar.clear(Calendar.HOUR)
+        calendar.clear(Calendar.MINUTE)
+        calendar.clear(Calendar.SECOND)
+        calendar.clear(Calendar.MILLISECOND)
+        date = calendar.time
         getTodosFromDB(date)
 
     }
@@ -82,13 +83,12 @@ class TodoListFragment : Fragment() {
         recyclerView.adapter = todosAdapter
     }
 
-    fun getTodosFromDB(date: Date) {
+    fun getTodosFromDB() {
         val data = TodoDatabase.getInstance(requireContext().applicationContext)
             .todoDao()
-            .getTodosByDate(date)
+            .getTodosByData(date)
+        pleaseHolder.isVisible = data.isEmpty()
         todosAdapter.changeData(data)
-        placeHolder.isVisible = data.isEmpty()
-
     }
 
     fun refreshData() {
