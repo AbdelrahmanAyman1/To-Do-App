@@ -83,7 +83,7 @@ class TodoListFragment : Fragment() {
         recyclerView.adapter = todosAdapter
     }
 
-    fun getTodosFromDB() {
+    fun getTodosFromDB(date: Date) {
         val data = TodoDatabase.getInstance(requireContext().applicationContext)
             .todoDao()
             .getTodosByData(date)

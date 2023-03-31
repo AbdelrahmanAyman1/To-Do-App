@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:background="@color/green_200">
+    android:background="@color/main_background">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/blue_200"
+        android:background="@color/calender_background_and_text_and_icon"
         app:layout_constraintHeight_percent=".28"
         app:layout_constraintTop_toTopOf="parent" />
 
