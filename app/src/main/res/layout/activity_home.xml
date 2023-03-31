@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="29dp"
-            android:backgroundTint="@color/calender_background_and_text_and_icon"
+            android:backgroundTint="@color/blue_500"
             android:src="@drawable/ic_add"
             app:layout_anchor="@id/bottom_bar"
             app:tint="@color/white" />
