@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.todo.R
-import com.example.todo.R.*
+import com.example.todo.R.layout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -38,9 +38,7 @@ class HomeActivity : AppCompatActivity() {
         bottomSheetFragment.show(supportFragmentManager, "")
         bottomSheetFragment.onAddFinishListener = object :
             AddTodoBottomSheet.OnAddFinishListener {
-            override fun onFinish() {
-                listFragment.refreshData()
-            }
+            override fun onFinish() = listFragment.refreshData()
         }
     }
 
@@ -48,6 +46,5 @@ class HomeActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
-
     }
 }

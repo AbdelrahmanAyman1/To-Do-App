@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingVertical="8dp"
-            android:textColor="@color/black"
+            android:textColor="@color/bottom_sheet_text"
             android:textSize="18sp"
             tools:text="12/12/2021" />
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/add_todo"
             android:textColor="@color/white"
-            app:backgroundTint="@color/blue_500"
+            app:backgroundTint="@color/calender_background_and_text_and_icon"
             app:cornerRadius="12dp"
             app:elevation="5dp"
             app:rippleColor="@color/white" />

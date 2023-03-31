@@ -61,6 +61,10 @@ class AddTodoBottomSheet : BottomSheetDialogFragment() {
             val title = titleTV.text.toString()
             val desc = desTV.text.toString()
             if (validate(title, desc)) {
+                calendar.clear(Calendar.HOUR)
+                calendar.clear(Calendar.MINUTE)
+                calendar.clear(Calendar.SECOND)
+                calendar.clear(Calendar.MILLISECOND)
                 var todo = Todo(
                     name = title, description = desc,
                     date = Date(calendar.timeInMillis), isDone = false
