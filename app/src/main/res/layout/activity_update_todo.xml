@@ -22,6 +22,7 @@
         android:elevation="40dp"
         app:cardCornerRadius="30dp"
         app:contentPadding="20dp"
+        android:background="@color/todo_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
