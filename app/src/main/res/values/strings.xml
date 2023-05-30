@@ -5,4 +5,5 @@
     <string name="description">Description</string>
     <string name="select_date">Select Date</string>
     <string name="no_todos_for_today">No Todos For Today</string>
+    <string name="mode">Light</string>
 </resources>

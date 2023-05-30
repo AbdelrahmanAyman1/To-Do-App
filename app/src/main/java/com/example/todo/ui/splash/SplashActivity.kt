@@ -1,5 +1,4 @@
-package com.example.todo.ui
-
+package com.example.todo.ui.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
