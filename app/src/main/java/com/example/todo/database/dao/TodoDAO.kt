@@ -4,10 +4,12 @@ import androidx.room.*
 import com.example.todo.database.model.Todo
 import java.util.*
 
+
 @Dao
 interface TodoDAO {
+
     @Insert
-    fun addTodo(todo: Todo)
+    fun insertTodo(todo: Todo)
 
     @Update
     fun updateTodo(todo: Todo)
@@ -15,11 +17,11 @@ interface TodoDAO {
     @Delete
     fun deleteTodo(todo: Todo)
 
+
     @Query("select * from Todo")
-    fun getAllTodo(): List<Todo>
+    fun getAllTodos(): MutableList<Todo>
 
 
-    @Query("select * from Todo where date=:date")
-    fun getTodosByData(date: Date): List<Todo>
-
+    @Query("select * from Todo where date = :date")
+    fun getTodoByDay(date: Long): MutableList<Todo>
 }
